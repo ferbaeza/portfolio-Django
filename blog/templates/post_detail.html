@@ -1,0 +1,12 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+
+<p>{{post.id}}</p>
+<p>{{post.title}}</p>
+<p>{{post.date}}</p>
+<p>{{post.body|safe}}</p>
+<img alt="{{ post.title}}" src="{{ post.image.url }}" width="400px" height="250px"/>
+
+
+{% endblock %}
