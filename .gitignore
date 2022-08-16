@@ -4,6 +4,5 @@ media
 
 env_folio
 
-blog/__pycache__
 
 db.sqlite3
