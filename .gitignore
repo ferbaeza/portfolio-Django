@@ -1,0 +1,5 @@
+media
+
+**/__pycache__
+env_folio
+db.sqlite3
