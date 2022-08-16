@@ -10,12 +10,22 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
+        {% if request.path == '/' %}
           <li class="nav-item">
             <a class="nav-link" href="{% url 'blog:posts' %}">Blog</a>
           </li>
+        {% endif%}
+
+        {% if request.path == '/blog/' %}
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'home' %}">Home</a>
+          </li>
+        {% endif %}
+
           <li class="nav-item d-flex align-items-center">
             <a class="btn btn-secondary btn-sm" href="{% static 'docs/cv.pdf' %}" target="_blank">Download CV</a>
           </li>
+  
         </ul>
       </div>
     </div>

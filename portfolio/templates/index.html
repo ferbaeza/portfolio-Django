@@ -2,10 +2,9 @@
 {% load static %}
 {% block content %}
 
-<header class="row m-auto">
+<header class="row m-auto mt-5">
 
-    <h3 class="fw-bold fst-italic text-center">Portfolio</h3>
-    <div class="col-md-4 m-auto">
+    <div class="col-md-4 m-auto mt-5">
         <img src="{% static 'img/light.jpg' %}" width="480px" height="600px" style="border-radius:20px ;"/>
     </div>
 
@@ -37,15 +36,18 @@
     {% for project in projects %}
     <div class="col-md-4 p-4">
       <div class="card bg-black card-project">
-        <img src="{{project.image.url }}" class="card-img-top" />
+        <img src="{{project.image.url }}" class="card-img-top" height="215px" />
   
-        <div class="card-body">
+        <div class="card-body bg-black">
   
-          <h2>{{ project.title }}</h2>
-          <p>{{ project.description }}</p>
+          <h2 class="text-light bg-black">{{ project.title }}</h2>
+          <p class="text-secondary">{{ project.description }}</p>
+          {% if project.url == '' %}
+          <a href="{% url 'portfolio:preview_project' project.id %}" class="btn btn-light rounded-2 btn-sm" rel="noreferrer">Preview</a>
+          {% endif %}
   
           {% if project.url %}
-          <a href="{{project.url}}" class="btn btn-light rounded-0 btn-sm" target="__blank" rel="noreferrer">Visit the
+          <a href="{{project.url}}" class="btn btn-light rounded-2 btn-sm" target="__blank" rel="noreferrer">Visit the
             Project</a>
           {% endif %}
         </div>
